@@ -6,4 +6,12 @@ module automatic_bike::automatic_bike {
         curent_gear: u8,
         accelerate: u8,
     }
+
+    public fun new_bike(): Bike {
+        Bike {
+            start_bike: false,
+            curent_gear: 0,
+            accelerate: 0,
+        }
+    }
 }
