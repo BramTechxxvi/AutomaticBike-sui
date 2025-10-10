@@ -10,7 +10,7 @@ module automatic_bike::automatic_bike {
     public fun new_bike(): AutomaticBike {
         AutomaticBike {
             is_on: false,
-            curent_gear: 0,
+            curent_gear: 1,
             accelerate: 0,
         }
     }
