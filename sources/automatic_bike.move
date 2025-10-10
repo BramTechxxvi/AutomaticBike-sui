@@ -2,15 +2,15 @@ module automatic_bike::automatic_bike {
     use std::string::String;
 
     public struct AutomaticBike has key, store{
-        start_bike: bool,
+        is_on: bool,
         curent_gear: u8,
         accelerate: u8,
     }
 
     public fun new_bike(): AutomaticBike {
         AutomaticBike {
-            start_bike: false,
-            curent_gear: 1,
+            is_on: false,
+            curent_gear: 0,
             accelerate: 0,
         }
     }
