@@ -1,7 +1,7 @@
 module automatic_bike::automatic_bike {
     use std::string::String;
 
-    public struct AutomaticBike {
+    public struct AutomaticBike has{
         start_bike: bool,
         curent_gear: u8,
         accelerate: u8,
@@ -16,7 +16,10 @@ module automatic_bike::automatic_bike {
     }
 
     public fun turn_on_bike(auto_bike: &mut AutomaticBike) {
-        auto_bike.start_bike = true;
+        if(!auto_bike.start_bike) {
+            auto_bike.start_bike = true;
+        };
+        true;
     }
 
     public fun turn_off_bike(auto_bike: &mut AutomaticBike) {
