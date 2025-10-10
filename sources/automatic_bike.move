@@ -8,7 +8,7 @@ module automatic_bike::automatic_bike {
     }
 
     public fun new_bike(): AutomaticBike {
-        Bike {
+        AutomaticBike {
             start_bike: false,
             curent_gear: 1,
             accelerate: 0,
