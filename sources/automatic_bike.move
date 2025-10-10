@@ -18,4 +18,8 @@ module automatic_bike::automatic_bike {
     public fun turn_on_bike(auto_bike: &mut AutomaticBike) {
         auto_bike.start_bike = true;
     }
+
+    public fun turn_off_bike(auto_bike: &mut AuomaticBike) {
+        auto
+    }
 }
