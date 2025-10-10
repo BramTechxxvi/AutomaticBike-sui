@@ -27,4 +27,6 @@ module automatic_bike::automatic_bike {
         auto_bike.accelerate = 0;
         auto_bike.current_gear = 0;
     }
+
+    pu
 }
