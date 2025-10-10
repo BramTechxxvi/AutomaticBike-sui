@@ -1,7 +1,7 @@
 module automatic_bike::automatic_bike {
     use std::string::String;
 
-    public struct AutomaticBike has{
+    public struct AutomaticBike has key, store{
         start_bike: bool,
         curent_gear: u8,
         accelerate: u8,
