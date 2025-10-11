@@ -48,7 +48,7 @@ module automatic_bike::automatic_bike {
     public fun current_gear(auto_bike: &AutomaticBike): u8 {
         auto_bike.current_gear
     }
-    public fun accelerate_bike(auto_bike: &mut AutomaticBike, speed: u8) {
+    public fun accelerate_bike(auto_bike: &mut AutomaticBike) {
         if(auto_bike.is_on) {
             if(auto_bike.current_gear == 1) {
                 auto_bike.current_speed = auto_bike.current_speed + 1;
@@ -77,5 +77,23 @@ module automatic_bike::automatic_bike {
         } else {
             auto_bike.current_gear = 4;
         };
+    }
+
+    public fun decelerate_bike(auto_bike: &mut AutomaticBike) {
+        if(auto_bike.current_speed == 0) {
+            return;
+        };
+        if(auto_bike.switch_on) {
+            if(auto_bike.current_gear == 1) {
+                auto_bike.current_speed = auto_bike.current_speed - 1;
+            } else if(auto_bike.current_gear == 2) {
+                auto_bike.current_speed = auto_bike.current_speed - 2;
+            } else if(auto_bike.current_gear == 3) {
+                auto_bike.current_speed = auto_bike.current_speed - 3;
+            } else {
+                auto_bike.current_speed = auto_bike.current_speed - 4;
+            };
+        };
+        update_gear(auto_bike);
     }
 }
