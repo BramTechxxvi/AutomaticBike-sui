@@ -51,15 +51,17 @@ module automatic_bike::automatic_bike {
     public fun accelerate_bike(auto_bike: &mut AutomaticBike, speed: u8) {
         if(auto_bike.is_on) {
             if(auto_bike.current_gear == 1) {
-                auto_bike.current_current_speed = auto_bike.current_current_speed + 1;
+                auto_bike.current_speed = auto_bike.current_speed + 1;
             } else if(auto_bike.current_gear == 2) {
-                auto_bike.current_current_speed = auto_bike.current_current_speed + 2;
+                auto_bike.current_speed = auto_bike.current_speed + 2;
             } else if(auto_bike.current_gear == 3) {
-                auto_bike.current_current_speed = auto_bike.current_current_speed + 3;
+                auto_bike.current_speed = auto_bike.current_speed + 3;
             } else {
-                auto_bike.current_current_speed = auto_bike.current_current_speed + 4;
+                auto_bike.current_speed = auto_bike.current_speed + 4;
             };
         };
         update_gear(auto_bike);
     }
+
+    
 }
