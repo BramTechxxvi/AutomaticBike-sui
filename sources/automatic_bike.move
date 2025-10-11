@@ -4,14 +4,14 @@ module automatic_bike::automatic_bike {
     public struct AutomaticBike has key, store{
         switch_on: bool,
         current_gear: u8,
-        accelerate: u8,
+        current_speed: u8,
     }
 
     public fun new_bike(): AutomaticBike {
         AutomaticBike {
             switch_on: false,
             current_gear: 0,
-            accelerate: 0,
+            current_speed: 0,
         }
     }
 
@@ -49,9 +49,6 @@ module automatic_bike::automatic_bike {
         auto_bike.current_gear
     }
     public fun accelerate_bike(auto_bike: &mut AutomaticBike, speed: u8) {
-        if(!auto_bike.is_on) {
-            return;
-        };
         if(auto_bike.is_on) {
             auto_bike.accelerate = speed;
             if(speed >= 0 && speed <= 20) {
