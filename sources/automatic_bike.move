@@ -1,7 +1,7 @@
 module automatic_bike::automatic_bike {
     use std::string::String;
 
-    public struct AutomaticBike has drop{
+    public struct AutomaticBike has drop {
         switch_on: bool,
         current_gear: u8,
         current_speed: u8,
