@@ -63,5 +63,7 @@ module automatic_bike::automatic_bike {
         update_gear(auto_bike);
     }
 
-    
+    public fun get_current_speed(auto_bike: &AutomaticBike): u8 {
+        auto_bike.current_speed
+    }
 }
