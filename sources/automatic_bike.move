@@ -35,6 +35,16 @@ module automatic_bike::automatic_bike {
         auto_bike.switch_on
     }
 
+    public fun change_gear(auto_bike: &mut AutomaticBike, gear: u8) {
+        if(!auto_bike.is_on) {
+            return;
+        };
+        if(gear < 1 || gear > 4) {
+            abort 1;
+        };
+        auto_bike.current_gear = gear;
+    }
+
     public fun current_gear(auto_bike: &AutomaticBike): u8 {
         auto_bike.current_gear
     }
