@@ -23,9 +23,12 @@ module automatic_bike::automatic_bike {
     }
 
     public fun turn_off_bike(auto_bike: &mut AutomaticBike) {
-        auto_bike.is_on = false;
-        auto_bike.accelerate = 0;
-        auto_bike.current_gear = 0;
+        if(auto_bike.is_on) {
+            auto_bike.is_on = false;
+            auto_bike.accelerate = 0;
+            auto_bike.current_gear = 0;
+        };
+        
     }
 
     public fun accelerate_bike(auto_bike: &mut AutomaticBike, speed: u8) {
