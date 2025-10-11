@@ -28,5 +28,23 @@ module automatic_bike::automatic_bike {
         auto_bike.current_gear = 0;
     }
 
-    pu
+    public fun accelerate_bike(auto_bike: &mut AutomaticBike, speed: u8) {
+        if(!auto_bike.is_on) {
+            return;
+        };
+        if(auto_bike.is_on) {
+            auto_bike.accelerate = speed;
+            if(speed >= 0 && speed <= 20) {
+                auto_bike.current_gear = 1;
+            } else if(speed > 20 && speed <= 30) {
+                auto_bike.current_gear = 2;
+            } else if(speed > 30 && speed <= 40) {
+                auto_bike.current_gear = 3;
+            } else if(speed > 40 && speed <= 50) {
+                auto_bike.current_gear = 4;
+            } else {
+                auto_bike.current_gear = 5;
+            };
+        };
+    }
 }
