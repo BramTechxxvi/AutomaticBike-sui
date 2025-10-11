@@ -66,4 +66,16 @@ module automatic_bike::automatic_bike {
     public fun get_current_speed(auto_bike: &AutomaticBike): u8 {
         auto_bike.current_speed
     }
+
+    public fun update_gear(auto_bike: &mut AutomaticBike) {
+        if(auto_bike.current_speed <= 20) {
+            auto_bike.current_gear = 1;
+        } else if(auto_bike.current_speed >= 21 && auto_bike.current_speed <= 30) {
+            auto_bike.current_gear = 2;
+        } else if(auto_bike.current_speed >= 31 && auto_bike.current_speed <= 40) {
+            auto_bike.current_gear = 3;
+        } else {
+            auto_bike.current_gear = 4;
+        };
+    }
 }
