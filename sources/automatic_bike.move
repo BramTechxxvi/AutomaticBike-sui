@@ -32,6 +32,10 @@ module automatic_bike::automatic_bike {
         false
     }
 
+    public fun is_on(auto_bike: &AutomaticBike): bool {
+        auto_bike.switch_on
+    }
+
     public fun accelerate_bike(auto_bike: &mut AutomaticBike, speed: u8) {
         if(!auto_bike.is_on) {
             return;
