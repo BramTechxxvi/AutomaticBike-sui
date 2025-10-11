@@ -18,7 +18,6 @@ module automatic_bike::automatic_bike {
     public fun turn_on_bike(auto_bike: &mut AutomaticBike) {
         if(!auto_bike.switch_on) {
             auto_bike.is_on = true;
-            auto_bike.current_gear = 1;
         };
         true
     }
