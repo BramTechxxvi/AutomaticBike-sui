@@ -35,6 +35,9 @@ module automatic_bike::automatic_bike {
         auto_bike.switch_on
     }
 
+    public fun current_gear(auto_bike: &AutomaticBike): u8 {
+        auto_bike.current_gear
+    }
     public fun accelerate_bike(auto_bike: &mut AutomaticBike, speed: u8) {
         if(!auto_bike.is_on) {
             return;
